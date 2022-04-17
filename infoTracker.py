@@ -69,19 +69,19 @@ def gasAlerts():
 def weatherAlerts():
   html_text = requests.get('https://weather.com/weather/tenday/l/a598be7242b5e38c214b05c9e8009a313c4a45c0ba93ff764f1fbe2c7aaee911').text
   soup = BeautifulSoup(html_text, 'lxml') #Instantiates BeautifulSoup 
-
+  
   day_list = soup.find('div', class_ = "DailyForecast--DisclosureList--msYIJ")
   today = day_list.find('details', class_ = "Disclosure--themeList--25Q0H") #Contains today's forecast
 
   #Today's forecast
-  today_date = today.summary.h2.get_text(" ") #Contains today's date
+  today_date = today.summary.h3.get_text(" ") #Contains today's date
   today_temp_low = today.find('span', class_ = "DetailsSummary--lowTempValue--3H-7I").get_text(" ") #Contains today's current temp
   today_condition = today.find('span', class_ = "DetailsSummary--extendedData--365A_").get_text(" ") #Contains today's weather specifics
   today_precipitation = today.find('div', class_ = "DetailsSummary--precip--1ecIJ").get_text(" ") #Contains today's precipitation
 
   #Skips to tomorrow
   tomorrow = today.find_next_sibling('details')
-  tomorrow_date = tomorrow.summary.h2.get_text(" ") #Contains tomorrow's date
+  tomorrow_date = tomorrow.summary.h3.get_text(" ") #Contains tomorrow's date
   tomorrow_temp_low = tomorrow.find('span', class_ = "DetailsSummary--lowTempValue--3H-7I").get_text(" ") #Contains tomorrow's low temp
   tomorrow_temp_high = tomorrow.find('span', class_ = "DetailsSummary--highTempValue--3Oteu").get_text(" ") #Contains tomorrow's high temp
   tomorrow_condition = tomorrow.find('span', class_ = "DetailsSummary--extendedData--365A_").get_text(" ") #Contains tomorrow's weather specifics
@@ -89,7 +89,7 @@ def weatherAlerts():
 
   #Skips to day after tomorrow
   second_day = tomorrow.find_next_sibling('details')
-  second_date = second_day.summary.h2.get_text(" ") #Contains tomorrow's date
+  second_date = second_day.summary.h3.get_text(" ") #Contains tomorrow's date
   second_temp_low = second_day.find('span', class_ = "DetailsSummary--lowTempValue--3H-7I").get_text(" ") #Contains next day's low temp
   second_temp_high = second_day.find('span', class_ = "DetailsSummary--highTempValue--3Oteu").get_text(" ") #Contains next day's high temp
   second_condition = second_day.find('span', class_ = "DetailsSummary--extendedData--365A_").get_text(" ") #Contains next day's weather specifics
@@ -98,7 +98,7 @@ def weatherAlerts():
 
   #Skips to third day
   third_day = second_day.find_next_sibling('details')
-  third_date = third_day.summary.h2.get_text(" ") #Contains tomorrow's date
+  third_date = third_day.summary.h3.get_text(" ") #Contains tomorrow's date
   third_temp_low = third_day.find('span', class_ = "DetailsSummary--lowTempValue--3H-7I").get_text(" ") #Contains third day's low temp
   third_temp_high = third_day.find('span', class_ = "DetailsSummary--highTempValue--3Oteu").get_text(" ") #Contains third day's high temp
   third_condition = third_day.find('span', class_ = "DetailsSummary--extendedData--365A_").get_text(" ") #Contains third day's weather specifics
@@ -140,6 +140,7 @@ if __name__ == '__main__':
       print(f'Next update in {wait} minutes...')
       print("Press ctrl + c to exit")
       time.sleep(wait * 60) #wait for how long before refrehing
+
   
   if input == 'weather':
     while True:
