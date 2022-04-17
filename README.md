@@ -1,2 +1,7 @@
 # NJ Info Tracker
-Webscrapes live traffic, gas, and weather from central NJ
+Uses the beautifulsoup library to webscrape live traffic, weather, and gas price information from Central NJ.
+Program has two modes:
+
+
+# Terminal Program
+
