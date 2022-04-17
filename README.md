@@ -3,5 +3,5 @@ Uses the beautifulsoup library to webscrape live traffic, weather, and gas price
 Program has two modes:
 
 
-# Terminal Program
+#Terminal Program
 
