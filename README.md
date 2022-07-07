@@ -1,7 +1,10 @@
 # NJ Info Tracker
 Uses the python beautifulsoup library to webscrape live traffic, weather, and gas price information from Central NJ.
-Program has two modes:
+Program has three modes:
 
+## All in one .exe
+
+Download the folder called "NJ Info Tracker" and run the .exe to launch the program with the new all in one GUI!
 
 ## Terminal Program
 
