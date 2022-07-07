@@ -6,6 +6,8 @@ Program has three modes:
 
 Download the folder called "NJ Info Tracker" and run the .exe to launch the program with the new all in one GUI!
 
+![alt_text](https://user-images.githubusercontent.com/45213253/177832668-b4f98993-5cd1-4518-b4e7-cc21a4298f18.png)
+
 ## Terminal Program
 
 Run the infoTracker.py file in a terminal to access the program. When left open, it will automatically refresh every 15 minutes to keep you up to date with the latest information
