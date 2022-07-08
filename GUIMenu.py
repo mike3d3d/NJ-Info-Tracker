@@ -24,10 +24,12 @@ if hasattr(sys, "frozen"):
     requests.utils.DEFAULT_CA_BUNDLE_PATH = override_where()
     requests.adapters.DEFAULT_CA_BUNDLE_PATH = override_where()
 
+#Everything above ^ just makes sure that the cacert.pem path is overriden so that the .exe can run when created
+
 sg.set_options(font=('Roboto', 12))
 
 frame_1 = [[sg.Text('NJ Info Tracker', font = 'Roboto 45 bold')], 
-           [sg.Image(r'C:\Users\mikem\Desktop\RutgersCode\PythonStuff\trafficScrape\njgreen.png', background_color='#67A2B7')],
+           [sg.Image(r'njgreen.png', background_color='#67A2B7')],
            [sg.Button('Gas', size = (6,2), button_color= ('white', '#9E416E'), mouseover_colors= '#67A2B7'), sg.Button('Weather', size = (8,2), button_color= ('white', '#9E416E'), mouseover_colors= '#67A2B7'), sg.Button('Traffic', size = (8,2), button_color= ('white', '#9E416E'), mouseover_colors= '#67A2B7')],
            [sg.Button('About', button_color= ('white', '#9E416E'))]
            ]
